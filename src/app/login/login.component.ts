@@ -1,16 +1,14 @@
 import { Component } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
-import { LoggerService } from '../services/logger.service';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ToolbarComponent } from '../toolbar/toolbar.component';
+
+import { AbstractControl, FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
-import { ToolbarComponent } from '../toolbar/toolbar.component';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 
+import { LoggerService } from '../services/logger.service';
 @Component({
   selector: 'app-login-component',
   templateUrl: './login.component.html',
@@ -18,11 +16,9 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [
     MatCardModule,
-    MatFormFieldModule,
     ReactiveFormsModule,
     MatIconModule,
     ToolbarComponent,
-    MatToolbarModule,
     MatInputModule,
     MatButtonModule,
     CommonModule
