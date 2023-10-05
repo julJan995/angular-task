@@ -13,9 +13,7 @@ export class AppRouterService {
       this.router.navigate(['/login'], { relativeTo: this.route });
     }
 
-
     navigateToDashboard(): void {
       this.router.navigate(['/dashboard'], { relativeTo: this.route });
     }
-
 }

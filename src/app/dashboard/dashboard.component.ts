@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ToolbarComponent } from '../toolbar/toolbar.component';
-import { AuthenticationService } from '../authenticationService.service';
+import { AuthenticationService } from '../services/authentication.service';
 
 
 @Component({

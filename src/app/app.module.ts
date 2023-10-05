@@ -5,10 +5,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { LoggerService } from './loggerService.service';
-import { AuthenticationService } from './authenticationService.service';
+import { LoggerService } from './services/logger.service';
+import { AuthenticationService } from './services/authentication.service';
 import { IsLoggedInGuard } from './guards/is-logged-in.guard';
-import { AppRouterService } from './app-router.service';
+import { AppRouterService } from './services/app-router.service';
 @NgModule({
   declarations: [
     AppComponent,

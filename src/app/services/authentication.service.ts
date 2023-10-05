@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, map } from 'rxjs';
 
 import { AppRouterService } from './app-router.service';
-import { UserCredentials, UserDetails } from './models';
+import { UserCredentials, UserDetails } from '../models';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthenticationService {
   readonly userDetails$:
     BehaviorSubject<UserDetails | null> =
@@ -22,9 +23,7 @@ export class AuthenticationService {
     this.userDetails$.next({
       email: data.email
     });
-
     this.appRouterService.navigateToDashboard();
-
   }
 
   logout(): void {
