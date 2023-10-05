@@ -1,8 +1,4 @@
 <mat-toolbar color="primary">
   <span class="example-spacer">Angular task</span>
-
-  <span>Info about user</span>
-  <p *ngIf="userDetails$ | async as userDetails">
-    email:{{ userDetails.email }}
-  </p>
+  <span *ngIf="userDetails$ | async as userDetails">{{ userDetails.email }}</span>
 </mat-toolbar>
