@@ -7,7 +7,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   {
     path: 'login',
-    loadComponent: () => import('./login-component/login-component.component').then(mod => mod.LoginComponentComponent)},
+    loadComponent: () => import('./login/login.component').then(mod => mod.LoginComponent)},
   {
     path: 'dashboard',
     loadComponent: () => import('./dashboard/dashboard.component').then(mod => mod.DashboardComponent),

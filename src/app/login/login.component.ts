@@ -13,8 +13,8 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login-component',
-  templateUrl: './login-component.component.html',
-  styleUrls: ['./login-component.component.scss'],
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
   standalone: true,
   imports: [
     MatCardModule,
@@ -28,7 +28,7 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ]
 })
-export class LoginComponentComponent {
+export class LoginComponent {
   hide = true;
   loginForm = new FormGroup({
     email: new FormControl('', [
