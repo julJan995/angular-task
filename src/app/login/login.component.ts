@@ -28,6 +28,7 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ]
 })
+
 export class LoginComponent {
   hide = true;
   loginForm = new FormGroup({
@@ -64,7 +65,7 @@ export class LoginComponent {
   }
 
   get isFormValid():boolean {
-    return this.emailControl.valid && this.passwordControl.valid;
+    return this.loginForm.valid;
   }
 
   constructor(private loggerService: LoggerService) { }
