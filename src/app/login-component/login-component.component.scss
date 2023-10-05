@@ -1,0 +1,19 @@
+.login-card {
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 400px;
+  justify-content: space-around;
+  align-items: center;
+}
+.login-input-fields {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.input {
+  width: 350px;
+}
