@@ -9,6 +9,7 @@ import { LoggerService } from './services/logger.service';
 import { AuthenticationService } from './services/authentication.service';
 import { IsLoggedInGuard } from './guards/is-logged-in.guard';
 import { AppRouterService } from './services/app-router.service';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,8 @@ import { AppRouterService } from './services/app-router.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ToolbarComponent
   ],
   providers: [
     LoggerService,

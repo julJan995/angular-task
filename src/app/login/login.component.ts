@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ToolbarComponent } from '../toolbar/toolbar.component';
 
 import { AbstractControl, FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
@@ -18,7 +17,6 @@ import { LoggerService } from '../services/logger.service';
     MatCardModule,
     ReactiveFormsModule,
     MatIconModule,
-    ToolbarComponent,
     MatInputModule,
     MatButtonModule,
     CommonModule
