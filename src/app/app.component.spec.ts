@@ -1,16 +1,28 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import { AuthenticationService } from './services/authentication.service';
+import { BehaviorSubject } from 'rxjs';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        ToolbarComponent
       ],
       declarations: [
         AppComponent
       ],
+      providers: [
+        {
+          provide: AuthenticationService,
+          useValue: {
+            userDetails$: new BehaviorSubject(null)
+          }
+        }
+      ]
     }).compileComponents();
   });
 
@@ -18,18 +30,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'angular-task'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular-task');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('angular-task app is running!');
   });
 });

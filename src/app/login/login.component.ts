@@ -24,7 +24,9 @@ import { LoggerService } from '../services/logger.service';
 })
 
 export class LoginComponent {
-  hide = true;
+
+  hidePassword = true;
+
   loginForm = new FormGroup({
     email: new FormControl('', [
       Validators.required,

@@ -14,7 +14,7 @@ export class AuthenticationService {
     new BehaviorSubject<UserDetails | null>(null);
 
   readonly isUserSignedIn$: Observable<boolean> = this.userDetails$.pipe(
-    map((UserDetails) => !!UserDetails),
+    map((userDetails) => !!userDetails),
     );
 
   constructor(private appRouterService: AppRouterService) {}

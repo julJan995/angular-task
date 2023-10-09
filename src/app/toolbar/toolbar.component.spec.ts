@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ToolbarComponent } from './toolbar.component';
+import { BehaviorSubject } from 'rxjs';
+import { AuthenticationService } from '../services/authentication.service';
 
 describe('ToolbarComponent', () => {
   let component: ToolbarComponent;
@@ -8,7 +10,15 @@ describe('ToolbarComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ToolbarComponent]
+      imports: [ToolbarComponent],
+      providers: [
+        {
+          provide: AuthenticationService,
+          useValue: {
+            userDetails$: new BehaviorSubject(null)
+          }
+        }
+      ]
     });
     fixture = TestBed.createComponent(ToolbarComponent);
     component = fixture.componentInstance;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
@@ -18,17 +18,11 @@ import { AuthenticationService } from '../services/authentication.service';
     MatCardModule
   ]
 })
-
-export class DashboardComponent implements OnInit {
+export class DashboardComponent {
 
   constructor(private readonly authService: AuthenticationService) {}
 
-
   onLogoutClick(): void {
     this.authService.logout();
-  }
-
-  ngOnInit(): void {
-    //console.log(this.loggerService.emailToDisplay())
   }
 }

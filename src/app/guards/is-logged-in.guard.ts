@@ -1,15 +1,15 @@
 import { Injectable } from "@angular/core";
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router, ActivatedRoute } from "@angular/router";
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree} from "@angular/router";
 import { Observable, tap } from "rxjs";
 import { AuthenticationService } from "../services/authentication.service";
+import { AppRouterService } from "../services/app-router.service";
 
 @Injectable()
 export class IsLoggedInGuard implements CanActivate {
 
   constructor(
     private authService: AuthenticationService,
-    private router: Router,
-    private route: ActivatedRoute
+    private appRouterService: AppRouterService
   ) {}
 
   canActivate(
@@ -20,7 +20,7 @@ export class IsLoggedInGuard implements CanActivate {
     return this.authService.isUserSignedIn$.pipe(
       tap((isUserSignedIn: boolean) => {
         if (!isUserSignedIn) {
-           this.router.navigate(['/login'], { relativeTo: this.route });
+          this.appRouterService.navigateToLoginPage();
         }
       })
     );
